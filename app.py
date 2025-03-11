@@ -4,20 +4,17 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from dotenv import load_dotenv
-load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 app = Flask(__name__, static_folder='.')
 app.secret_key = os.urandom(24)
-# Add after line 10 (after loading .env)
-print("DB_NAME:", os.getenv('DB_DBNAME'))
-print("DB_USER:", os.getenv('DB_USER'))
-print("DB_PASSWORD:", os.getenv('DB_PASSWORD'))
+
 
 # Database connection parameters
 DB_NAME = os.getenv('DB_DBNAME')  # Change to your PostgreSQL database name
 DB_USER = os.getenv('DB_USER')  # Change to your PostgreSQL username
 DB_PASSWORD = os.getenv('DB_PASSWORD')  # Change to your PostgreSQL password
-DB_HOST = "localhost"
+DB_HOST = "193.123.37.236"
 DB_PORT = "5432"
 
 def get_db_connection():
