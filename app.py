@@ -10,7 +10,7 @@ app = Flask(__name__, static_folder='.')
 app.secret_key = os.urandom(24)
 
 # Database connection parameters
-DB_NAME = os.getenv('DB_DBNAME'),
+DB_NAME = os.getenv('DB_DBNAME')  # Change to your PostgreSQL database name
 DB_USER = os.getenv('DB_USER'),  # Change to your PostgreSQL username
 DB_PASSWORD = os.getenv('DB_PASSWORD'),  # Change to your PostgreSQL password
 DB_HOST = "localhost"
@@ -181,4 +181,4 @@ def user_data():
     return jsonify({"logged_in": False}), 401
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
