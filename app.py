@@ -8,6 +8,10 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 app = Flask(__name__, static_folder='.')
 app.secret_key = os.urandom(24)
+# Add after line 10 (after loading .env)
+print("DB_NAME:", os.getenv('DB_DBNAME'))
+print("DB_USER:", os.getenv('DB_USER'))
+print("DB_PASSWORD:", os.getenv('DB_PASSWORD'))
 
 # Database connection parameters
 DB_NAME = os.getenv('DB_DBNAME')  # Change to your PostgreSQL database name
