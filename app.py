@@ -11,8 +11,8 @@ app.secret_key = os.urandom(24)
 
 # Database connection parameters
 DB_NAME = os.getenv('DB_DBNAME')  # Change to your PostgreSQL database name
-DB_USER = os.getenv('DB_USER'),  # Change to your PostgreSQL username
-DB_PASSWORD = os.getenv('DB_PASSWORD'),  # Change to your PostgreSQL password
+DB_USER = os.getenv('DB_USER')  # Change to your PostgreSQL username
+DB_PASSWORD = os.getenv('DB_PASSWORD')  # Change to your PostgreSQL password
 DB_HOST = "localhost"
 DB_PORT = "5432"
 
